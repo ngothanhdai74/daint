@@ -789,7 +789,7 @@
 							"Description": null,
 							"FinishTask": true,
 							"FinishTodo": false,
-							"TransactionID": 9,
+							"TransactionID": 4,
 							"CollectInfos": null,
 							"Roles": [
 								2
@@ -1791,17 +1791,7 @@
 					"ToActivityID": 6,
 					"AllowRecall": false
 				}
-				,
-				{
-					"ID": 9,
-					"WorkflowID": null,
-					"VersionID": 0,
-					"Name": "Chuyển Đơn vị",
-					"Description": null,
-					"FromActivityID": 2,
-					"ToActivityID": 5,
-					"AllowRecall": false
-				}
+				
 			]
 		}
 	]
