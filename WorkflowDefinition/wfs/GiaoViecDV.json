@@ -1,0 +1,1528 @@
+{
+	"ID": "GiaoViecDV",
+	"Name": "GiaoViecDV",
+	"Title": "Giao việc",
+	"Description": "Quy trình giao việc tại Đơn vị",
+	"Version": 1,
+	"MaxVersion": 1,
+	"Status": 1,
+	"OrgCode": "",
+	"OrgPath": "\\",
+	"Versions": [
+		{
+			"ID": 1,
+			"WorkflowID": null,
+			"Version": 1,
+			"IsActive": true,
+			"Description": "Init Version",
+			"Duration": 7,
+			"DurationUnit": 0,
+			"Variables": [],
+			"Formulas": [],
+			"States": [
+				{
+					"ID": 1,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Khởi tạo",
+					"Description": null,
+					"Percent": 0
+				},
+				{
+					"ID": 2,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Xử lý",
+					"Description": null,
+					"Percent": 0
+				},
+				{
+					"ID": 3,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Kết thúc",
+					"Description": null,
+					"Percent": 0
+				}
+			],
+			"Roles": [
+				{
+					"ID": 1,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Lãnh đạo Đơn vị",
+					"Description": null,
+					"SeqNo": 0
+				},
+				{
+					"ID": 2,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chuyên viên",
+					"Description": null,
+					"SeqNo": 0
+				},
+				{
+					"ID": 3,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Văn thư đơn vị",
+					"Description": null,
+					"SeqNo": 0
+				},
+				{
+					"ID": 4,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Lãnh đạo Hành chính",
+					"Description": null,
+					"SeqNo": 0
+				},
+				{
+					"ID": 5,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Lãnh đạo Bộ phận",
+					"Description": null,
+					"SeqNo": 0
+				}
+			],
+			"Activities": [
+				{
+					"ID": 1,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Khởi tạo",
+					"Type": 0,
+					"Description": null,
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"IsWorkQueue": true,
+					"RefuseType": 0,
+					"Roles": [
+						1,
+						3,
+						4,
+						5
+					],
+					"DefaultRole": 3,
+					"Actions": [
+						{
+							"ID": 1,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Trình Lãnh đạo",
+							"Description": null,
+							"FinishTask": false,
+							"TransactionID": 1,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 2,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "ChuTri",
+									"PropTitle": "Chủ trì",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "PhoiHop",
+									"PropTitle": "Phối hợp",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								1,
+								3,
+								4
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 1
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 4,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Lãnh đạo Hành chính xử lý",
+							"AutoFoward": true,
+							"Description": null,
+							"FinishTask": false,
+							"TransactionID": 9,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 2,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "ChuTri",
+									"PropTitle": "Chủ trì",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "PhoiHop",
+									"PropTitle": "Phối hợp",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								1,
+								3
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 1
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 2,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Bộ phận xử lý",
+							"Description": null,
+							"FinishTask": false,
+							"TransactionID": 2,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 2,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "ChuTri",
+									"PropTitle": "Chủ trì",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "PhoiHop",
+									"PropTitle": "Phối hợp",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								1,
+								4
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 1
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 3,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Chuyên viên xử lý",
+							"Description": null,
+							"FinishTask": false,
+							"TransactionID": 7,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 2,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "ChuTri",
+									"PropTitle": "Chủ trì",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "PhoiHop",
+									"PropTitle": "Phối hợp",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								5
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 1
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 888,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Khởi tạo văn bản",
+							"Description": "Khởi tạo văn bản",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": null,
+							"Roles": [
+								1,
+								3,
+								4
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:0"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "const:0"
+											},
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.FORWARDDOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": 2,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chuyên viên xử lý",
+					"Type": 1,
+					"Description": null,
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [
+						2
+					],
+					"Actions": [
+						{
+							"ID": 1,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Kết thúc",
+							"Description": null,
+							"FinishTask": true,
+							"TransactionID": 3,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 2,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								2
+							],
+							"Steps": []
+						},
+						{
+							"ID": 990,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Cập nhật kết quả",
+							"Description": "Giải quyết xong",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": [],
+							"Roles": [
+								1,
+								4,
+								5
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 14,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 2
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 991,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Đánh giá kết quả",
+							"Description": "Hoàn thành",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": [],
+							"Roles": [
+								1,
+								4,
+								5
+							],
+							"Steps": [								
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 15,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 4
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 987,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Đánh giá kết quả",
+							"Description": "Chưa hoàn thành",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": [],
+							"Roles": [
+								1,
+								4,
+								5
+							],
+							"Steps": [								
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 15,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 3
+											}
+										]
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": 4,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Lãnh đạo Hành chính xử lý",
+					"Type": 1,
+					"Description": null,
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [
+						4
+					],
+					"Actions": [
+						{
+							"ID": 1,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Bộ phận xử lý",
+							"Description": null,
+							"FinishTask": false,
+							"TransactionID": 4,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 2,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "ChuTri",
+									"PropTitle": "Chủ trì",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "PhoiHop",
+									"PropTitle": "Phối hợp",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								4
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 1
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 3,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Trình Lãnh đạo",
+							"Description": null,
+							"FinishTask": false,
+							"TransactionID": 11,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 2,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "ChuTri",
+									"PropTitle": "Chủ trì",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "PhoiHop",
+									"PropTitle": "Phối hợp",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								4
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 1
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 990,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Cập nhật kết quả",
+							"Description": "Giải quyết xong",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": [],
+							"Roles": [
+								1,
+								4,
+								5
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "IsMeetingReq",
+												"Value": true
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 2
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 991,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Đánh giá kết quả",
+							"Description": "Hoàn thành",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": [],
+							"Roles": [
+								1,
+								4,
+								5
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "IsMeetingReq",
+												"Value": true
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 4
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 987,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Đánh giá kết quả",
+							"Description": "Chưa hoàn thành",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": [],
+							"Roles": [
+								1,
+								4,
+								5
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "IsMeetingReq",
+												"Value": true
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 3
+											}
+										]
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": 5,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Lãnh đạo Đơn vị xử lý",
+					"Type": 1,
+					"Description": null,
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [
+						1
+					],
+					"Actions": [
+						{
+							"ID": 1,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Trình Lãnh đạo",
+							"Description": null,
+							"FinishTask": true,
+							"TransactionID": 10,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 2,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "ChuTri",
+									"PropTitle": "Chủ trì",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "PhoiHop",
+									"PropTitle": "Phối hợp",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 1
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 2,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Chuyển xử lý",
+							"Description": null,
+							"FinishTask": false,
+							"TransactionID": 5,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 2,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "ChuTri",
+									"PropTitle": "Chủ trì",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "PhoiHop",
+									"PropTitle": "Phối hợp",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 1
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 990,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Cập nhật kết quả",
+							"Description": "Giải quyết xong",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": [],
+							"Roles": [
+								1,
+								4,
+								5
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "IsMeetingReq",
+												"Value": true
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 2
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 991,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Đánh giá kết quả",
+							"Description": "Hoàn thành",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": [],
+							"Roles": [
+								1,
+								4,
+								5
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "IsMeetingReq",
+												"Value": true
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 4
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 987,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Đánh giá kết quả",
+							"Description": "Chưa hoàn thành",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": [],
+							"Roles": [
+								1,
+								4,
+								5
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "IsMeetingReq",
+												"Value": true
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 3
+											}
+										]
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": 6,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Lãnh đạo Bộ phận xử lý",
+					"Type": 1,
+					"Description": null,
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [
+						5
+					],
+					"Actions": [
+						{
+							"ID": 1,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Lãnh đạo Bộ phận xử lý",
+							"Description": null,
+							"FinishTask": false,
+							"TransactionID": 12,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 2,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "ChuTri",
+									"PropTitle": "Chủ trì",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "PhoiHop",
+									"PropTitle": "Phối hợp",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								5
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 1
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 2,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Chuyên viên xử lý",
+							"Description": null,
+							"FinishTask": false,
+							"TransactionID": 8,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 2,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "ChuTri",
+									"PropTitle": "Chủ trì",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "PhoiHop",
+									"PropTitle": "Phối hợp",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								5
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 5,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 1
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 990,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Cập nhật kết quả",
+							"Description": "Giải quyết xong",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": [],
+							"Roles": [
+								1,
+								4,
+								5
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 14,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 2
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 991,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Đánh giá kết quả",
+							"Description": "Hoàn thành",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": [],
+							"Roles": [
+								1,
+								4,
+								5
+							],
+							"Steps": [								
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 15,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 4
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 987,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Đánh giá kết quả",
+							"Description": "Chưa hoàn thành",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": [],
+							"Roles": [
+								1,
+								4,
+								5
+							],
+							"Steps": [								
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 15,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 3
+											}
+										]
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": 3,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Kết thúc",
+					"Type": 2,
+					"Description": null,
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [],
+					"Actions": []
+				}
+			],
+			"Transactions": [
+				{
+					"ID": 1,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Trình Lãnh đạo đơn vị",
+					"Description": null,
+					"FromActivityID": 1,
+					"ToActivityID": 5,
+					"AllowRecall": false
+				},
+				{
+					"ID": 2,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chuyển xử lý",
+					"Description": null,
+					"FromActivityID": 1,
+					"ToActivityID": 6,
+					"AllowRecall": false
+				},
+				{
+					"ID": 3,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Kết thúc",
+					"Description": null,
+					"FromActivityID": 2,
+					"ToActivityID": 3,
+					"AllowRecall": false
+				},
+				{
+					"ID": 4,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chuyển xử lý",
+					"Description": null,
+					"FromActivityID": 4,
+					"ToActivityID": 6,
+					"AllowRecall": false
+				},
+				{
+					"ID": 5,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chuyển xử lý",
+					"Description": null,
+					"FromActivityID": 5,
+					"ToActivityID": 6,
+					"AllowRecall": false
+				},
+				{
+					"ID": 7,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chuyển xử lý",
+					"Description": null,
+					"FromActivityID": 1,
+					"ToActivityID": 2,
+					"AllowRecall": false
+				},
+				{
+					"ID": 8,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chuyển xử lý",
+					"Description": null,
+					"FromActivityID": 6,
+					"ToActivityID": 2,
+					"AllowRecall": false
+				},
+				{
+					"ID": 9,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chuyển xử lý",
+					"Description": null,
+					"FromActivityID": 1,
+					"ToActivityID": 4,
+					"AllowRecall": false
+				},
+				{
+					"ID": 10,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Trình lãnh đạo",
+					"Description": null,
+					"FromActivityID": 5,
+					"ToActivityID": 5,
+					"AllowRecall": false
+				},
+				{
+					"ID": 11,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Trình lãnh đạo",
+					"Description": null,
+					"FromActivityID": 4,
+					"ToActivityID": 5,
+					"AllowRecall": false
+				},
+				{
+					"ID": 12,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Lãnh đạo bộ phận xử lý",
+					"Description": null,
+					"FromActivityID": 6,
+					"ToActivityID": 6,
+					"AllowRecall": false
+				}
+			]
+		}
+	]
+}

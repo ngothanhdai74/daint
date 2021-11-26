@@ -1,0 +1,345 @@
+{
+	"ID": "VanBanDiBo",
+	"Name": "VanBanDiBo",
+	"Title": "Văn bản đi Bộ Phát hành",
+	"Description": "Quy trình xử lý Văn bản đi Bộ Phát hành",
+	"Version": 1,
+	"MaxVersion": 1,
+	"Status": 1,
+	"OrgCode": "",
+	"OrgPath": "\\",
+	"Versions": [
+		{
+			"ID": 1,
+			"WorkflowID": null,
+			"Version": 1,
+			"IsActive": true,
+			"Description": "Init Version",
+			"Duration": 7,
+			"DurationUnit": 0,
+			"Variables": [],
+			"Formulas": [],
+			"States": [
+				{
+					"ID": 1,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Khởi tạo",
+					"Description": null,
+					"Percent": 0
+				},
+				{
+					"ID": 2,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Phát hành",
+					"Description": null,
+					"Percent": 0
+				},
+				{
+					"ID": 3,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Kết thúc",
+					"Description": null,
+					"Percent": 0
+				}
+			],
+			"Roles": [
+				{
+					"ID": 1,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Văn thư Bộ",
+					"Description": null,
+					"SeqNo": 0
+				},
+				{
+					"ID": 2,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Văn thư đơn vị",
+					"Description": null,
+					"SeqNo": 0
+				}
+			],
+			"Activities": [
+				{
+					"ID": 1,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Cấp số, phát hành",
+					"Type": 0,
+					"Description": null,
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"IsWorkQueue": true,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [
+						1
+					],
+					"Actions": [
+						{
+							"ID": 997,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Phát hành",
+							"TransactionID": 1,
+							"Description": null,
+							"FinishTask": true,
+							"CollectInfos": null,
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:2"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:1"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:104"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": 3
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:3"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 2,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.Notification"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "0"
+											},
+											{
+												"Code": "State",
+												"Value": "3"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 888,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Khởi tạo văn bản",
+							"Description": "Khởi tạo văn bản",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": null,
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:0"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": 2,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Đơn vị",
+					"Type": 1,
+					"Description": null,
+					"IsChild": true,
+					"ChildWorkflowID": "VBDenDV",
+					"IsWorkQueue": true,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [
+						2
+					],
+					"Actions": [
+						{
+							"ID": 1,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Kết thúc",
+							"Description": null,
+							"FinishTask": true,
+							"TransactionID": 2,
+							"CollectInfos": null,
+							"Roles": [],
+							"Steps": []
+						}
+					],
+					"InputMappings": [],
+					"OutputMappings": []
+				},
+				{
+					"ID": 3,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Kết thúc",
+					"Type": 2,
+					"Description": null,
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [],
+					"Actions": []
+				}
+			],
+			"Transactions": [
+				{
+					"ID": 1,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Phát hành văn bản",
+					"Description": null,
+					"FromActivityID": 1,
+					"ToActivityID": 2,
+					"AllowRecall": false
+				},
+				{
+					"ID": 2,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Kết thúc",
+					"Description": null,
+					"FromActivityID": 2,
+					"ToActivityID": 3,
+					"AllowRecall": false
+				}
+			]
+		}
+	]
+}

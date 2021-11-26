@@ -1,0 +1,1808 @@
+{
+	"ID": "VBDenTC",
+	"Name": "VBDenTC",
+	"Title": "Quy trình Văn bản đến Tổng cục",
+	"Description": "Quy trình xử lý Văn bản đến tại Tổng cục",
+	"Version": 1,
+	"MaxVersion": 1,
+	"Status": 1,
+	"OrgCode": "",
+	"OrgPath": "\\",
+	"Versions": [
+		{
+			"ID": 1,
+			"WorkflowID": null,
+			"Version": 1,
+			"IsActive": true,
+			"Description": "Init Version",
+			"Duration": 7,
+			"DurationUnit": 0,
+			"Variables": [],
+			"Formulas": [],
+			"States": [
+				{
+					"ID": 1,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Bắt đầu",
+					"Description": null,
+					"Percent": 0
+				},
+				{
+					"ID": 2,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Trưởng phòng HC xử lý",
+					"Description": null,
+					"Percent": 0
+				},
+				{
+					"ID": 3,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Lãnh đạo VP xử lý",
+					"Description": null,
+					"Percent": 0
+				},
+				{
+					"ID": 4,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Lãnh đạo Tổng cục cho ý kiến",
+					"Description": null,
+					"Percent": 0
+				},
+				{
+					"ID": 5,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Đơn vị xử lý",
+					"Description": null,
+					"Percent": 0
+				},
+				{
+					"ID": 6,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Kết thúc",
+					"Description": null,
+					"Percent": 0
+				}
+			],
+			"Roles": [
+				{
+					"ID": 1,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Văn thư Tổng cục",
+					"Description": null,
+					"SeqNo": 0
+				},
+				{
+					"ID": 2,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Trưởng phòng Hành chính",
+					"Description": null,
+					"SeqNo": 0
+				},
+				{
+					"ID": 3,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chánh văn phòng",
+					"Description": null,
+					"SeqNo": 0
+				},
+				{
+					"ID": 4,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Lãnh đạo Tổng cục",
+					"Description": null,
+					"SeqNo": 0
+				},
+				{
+					"ID": 5,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Văn thư Đơn vị",
+					"Description": null,
+					"SeqNo": 0
+				}
+			],
+			"Activities": [
+				{
+					"ID": 1,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Bắt đầu",
+					"Type": 0,
+					"Description": null,
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [
+						1
+					],
+					"Actions": [
+						{
+							"ID": 1,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Chuyển Trưởng phòng Hành chính",
+							"AutoFoward": true,
+							"Description": null,
+							"FinishTask": true,
+							"FinishTodo": false,
+							"TransactionID": 1,
+							"CollectInfos": null,
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 2,
+									"Action": {
+										"ID": 2,
+										"Name": "11"
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "const:1"
+											},
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.FORWARDDOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 2,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Chuyển Chánh văn phòng",
+							"AutoFoward": true,
+							"Description": null,
+							"FinishTask": true,
+							"FinishTodo": false,
+							"TransactionID": 2,
+							"CollectInfos": null,
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 2,
+									"Action": {
+										"ID": 2,
+										"Name": "11"
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "const:1"
+											},
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.FORWARDDOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 999,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Vào sổ",
+							"Description": "Vào sổ văn bản đến",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": null,
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:1003"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Đã tiếp nhận"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 994,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Từ chối",
+							"Description": "Từ chối tiếp nhận",
+							"FinishTask": true,
+							"TransactionID": 10,
+							"CollectInfos": null,
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:1002"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Từ chối tiếp nhận"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "10"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "10"
+											},
+											{
+												"Code": "Status",
+												"Value": "2"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 993,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Không vào sổ",
+							"Description": "Không vào sổ",
+							"FinishTask": true,
+							"TransactionID": 10,
+							"CollectInfos": null,
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											},
+											{
+												"Code": "Status",
+												"Value": "2"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 888,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Khởi tạo văn bản đến",
+							"Description": "Khởi tạo văn bản đến",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": null,
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:0"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 995,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Thu hồi văn bản",
+							"Description": "Thu hồi văn bản",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": null,
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "8"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "6"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:8"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						}
+					],
+					"InputMappings": [],
+					"OutputMappings": []
+				},
+				{
+					"ID": 2,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Trưởng phòng Hành chính",
+					"Type": 1,
+					"Description": null,
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"IsWorkQueue": false,
+					"RefuseType": 0,
+					"Roles": [
+						2
+					],
+					"Actions": [
+						{
+							"ID": 3,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Trình Chánh văn phòng",
+							"AutoFoward": true,
+							"Description": null,
+							"FinishTask": true,
+							"FinishTodo": false,
+							"TransactionID": 3,
+							"CollectInfos": null,
+							"Roles": [
+								2
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 2,
+									"Action": {
+										"ID": 5,
+										"Name": "11"
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"ItemType": 4,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "3"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:1004"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Phân công xử lý"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "const:3"
+											},
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.FORWARDDOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:1"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:1"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 2,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Chuyển Đơn vị",
+							"Description": null,
+							"FinishTask": true,
+							"FinishTodo": false,
+							"TransactionID": 9,
+							"CollectInfos": null,
+							"Roles": [
+								2
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 2,
+									"Action": {
+										"ID": 5,
+										"Name": "11"
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"ItemType": 4,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "3"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:1004"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Phân công xử lý"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "const:3"
+											},
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.FORWARDDOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:1"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:1"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 995,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Thu hồi văn bản",
+							"Description": "Thu hồi văn bản",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": null,
+							"Roles": [
+								2
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "8"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 2,
+									"Action": {
+										"ID": 2,
+										"Name": "6"
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:8"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						}
+					],
+					"InputMappings": [],
+					"OutputMappings": []
+				},
+				{
+					"ID": 3,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chánh văn phòng",
+					"Type": 1,
+					"Description": null,
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"IsWorkQueue": false,
+					"RefuseType": 0,
+					"Roles": [
+						3
+					],
+					"Actions": [
+						{
+							"ID": 1,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Chuyển Trưởng phòng Hành chính",
+							"AutoFoward": true,
+							"Description": null,
+							"FinishTask": true,
+							"FinishTodo": false,
+							"TransactionID": 5,
+							"CollectInfos": null,
+							"Roles": [
+								3
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 2,
+									"Action": {
+										"ID": 5,
+										"Name": "11"
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"ItemType": 4,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "3"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:1004"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Phân công xử lý"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "const:3"
+											},
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.FORWARDDOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:1"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:1"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 2,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Trình Lãnh đạo",
+							"Description": null,
+							"FinishTask": false,
+							"TransactionID": 6,
+							"CollectInfos": [
+								{
+									"PropName": "IsTrackingDoc",
+									"PropTitle": "Phải theo dõi",
+									"DataType": 5,
+									"Value": true,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								3
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "15"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 5,
+									"Action": {
+										"Mode": 2,
+										"Props": [
+											{
+												"Code": "IsProcessLeader",
+												"Value": true
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "const:5"
+											},
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.FORWARDDOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 3,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Chuyển Đơn vị",
+							"Description": null,
+							"FinishTask": true,
+							"FinishTodo": false,
+							"TransactionID": 7,
+							"CollectInfos": null,
+							"Roles": [
+								3
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 2,
+									"Action": {
+										"ID": 5,
+										"Name": "11"
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"ItemType": 4,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "3"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:1004"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Phân công xử lý"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "const:3"
+											},
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.FORWARDDOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:1"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:1"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 995,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Thu hồi văn bản",
+							"Description": "Thu hồi văn bản",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": null,
+							"Roles": [
+								3
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "8"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 2,
+									"Action": {
+										"ID": 2,
+										"Name": "6"
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:8"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						}
+					],
+					"InputMappings": [],
+					"OutputMappings": []
+				},
+				{
+					"ID": 4,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Lãnh đạo Tổng cục",
+					"Type": 1,
+					"Description": null,
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"IsWorkQueue": true,
+					"QueueType": 2,
+					"RefuseType": 0,
+					"Roles": [
+						4
+					],
+					"Actions": [
+						{
+							"ID": 1,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Cho ý kiến",
+							"Description": null,
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": null,
+							"Roles": [
+								4
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 3,
+										"Conditions": "[Comment] ",
+										"Props": [
+											{
+												"Code": "Comment",
+												"Value": ""
+											}
+										]
+									}
+								}
+							]
+						}
+					],
+					"InputMappings": [],
+					"OutputMappings": []
+				},
+				{
+					"ID": 5,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Đơn vị",
+					"Type": 1,
+					"Description": null,
+					"IsChild": true,
+					"ChildWorkflowID": "VBDenDV",
+					"IsWorkQueue": true,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [
+						5
+					],
+					"Actions": [
+						{
+							"ID": 998,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Kết thúc",
+							"Description": null,
+							"FinishTask": true,
+							"TransactionID": 8,
+							"CollectInfos": null,
+							"Roles": [
+								5
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:2"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						}
+					],
+					"InputMappings": [],
+					"OutputMappings": []
+				},
+				{
+					"ID": 6,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Kết thúc",
+					"Type": 2,
+					"Description": null,
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [],
+					"Actions": [],
+					"InputMappings": [],
+					"OutputMappings": []
+				}
+			],
+			"Transactions": [
+				{
+					"ID": 1,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chuyển Trưởng phòng Hành chính",
+					"Description": null,
+					"FromActivityID": 1,
+					"ToActivityID": 2,
+					"AllowRecall": false
+				},
+				{
+					"ID": 2,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chuyển Chánh văn phòng",
+					"Description": null,
+					"FromActivityID": 1,
+					"ToActivityID": 3,
+					"AllowRecall": false
+				},
+				{
+					"ID": 3,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chuyển Chánh văn phòng",
+					"Description": null,
+					"FromActivityID": 2,
+					"ToActivityID": 3,
+					"AllowRecall": false
+				},
+				{
+					"ID": 4,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chuyển Đơn vị",
+					"Description": null,
+					"FromActivityID": 2,
+					"ToActivityID": 5,
+					"AllowRecall": false
+				},
+				{
+					"ID": 5,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chuyển Trưởng phòng Hành chính",
+					"Description": null,
+					"FromActivityID": 3,
+					"ToActivityID": 2,
+					"AllowRecall": false
+				},
+				{
+					"ID": 6,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Trình Lãnh đạo",
+					"Description": null,
+					"FromActivityID": 3,
+					"ToActivityID": 4,
+					"AllowRecall": false
+				},
+				{
+					"ID": 7,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chuyển Đơn vị",
+					"Description": null,
+					"FromActivityID": 3,
+					"ToActivityID": 5,
+					"AllowRecall": false
+				},
+				{
+					"ID": 8,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Kết thúc",
+					"Description": null,
+					"FromActivityID": 5,
+					"ToActivityID": 6,
+					"AllowRecall": false
+				}
+				,
+				{
+					"ID": 9,
+					"WorkflowID": null,
+					"VersionID": 0,
+					"Name": "Chuyển Đơn vị",
+					"Description": null,
+					"FromActivityID": 2,
+					"ToActivityID": 5,
+					"AllowRecall": false
+				}
+			]
+		}
+	]
+}

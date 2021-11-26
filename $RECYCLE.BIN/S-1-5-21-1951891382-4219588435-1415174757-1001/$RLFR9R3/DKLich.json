@@ -1,0 +1,161 @@
+{
+    "ID": "DKLich",
+    "Name": "DKLich",
+    "Title": "Đăng ký Lịch",
+    "Description": null,
+    "Version": 1,
+    "MaxVersion": 1,
+    "Status": 1,
+    "OrgCode": "",
+    "OrgPath": "\\",
+    "Versions": [{
+            "ID": 1,
+            "WorkflowID": null,
+            "Version": 1,
+            "IsActive": true,
+            "Description": "Init Version",
+            "Duration": 7,
+            "DurationUnit": 0,
+            "Variables": [],
+            "Formulas": [],
+            "States": [{
+                    "ID": 1,
+                    "WorkflowID": null,
+                    "VersionID": 0,
+                    "Name": "Đăng ký",
+                    "Description": null,
+                    "Percent": 0
+                }, {
+                    "ID": 2,
+                    "WorkflowID": null,
+                    "VersionID": 0,
+                    "Name": "Phê duyệt",
+                    "Description": null,
+                    "Percent": 0
+                }, {
+                    "ID": 3,
+                    "WorkflowID": null,
+                    "VersionID": 0,
+                    "Name": "Từ chối",
+                    "Description": null,
+                    "Percent": 0
+                }
+            ],
+            "Roles": [{
+                    "ID": 1,
+                    "WorkflowID": null,
+                    "VersionID": 0,
+                    "Name": "Người đăng ký",
+                    "Description": null,
+                    "SeqNo": 0
+                }, {
+                    "ID": 2,
+                    "WorkflowID": null,
+                    "VersionID": 0,
+                    "Name": "Người phê duyệt",
+                    "Description": null,
+                    "SeqNo": 0
+                }
+            ],
+            "Activities": [{
+                    "ID": 1,
+                    "WorkflowID": null,
+                    "VersionID": 0,
+                    "Name": "Đăng ký",
+                    "Type": 0,
+                    "Description": null,
+                    "IsChild": false,
+                    "ChildWorkflowID": null,
+                    "AllowRefuse": false,
+                    "RefuseType": 0,
+                    "Roles": [1, 2],
+                    "Actions": [{
+                            "ID": 1,
+                            "WorkflowID": null,
+                            "VersionID": 0,
+                            "ActivityID": 0,
+                            "Name": "Đăng ký",
+                            "Description": null,
+                            "FinishTask": true,
+                            "TransactionID": 1,
+                            "CollectInfos": null,
+                            "Roles": [1, 2],
+                            "Steps": []
+                        }
+                    ]
+                }, {
+                    "ID": 2,
+                    "WorkflowID": null,
+                    "VersionID": 0,
+                    "Name": "Phê duyệt",
+                    "Type": 1,
+                    "Description": null,
+                    "IsChild": false,
+                    "ChildWorkflowID": null,
+                    "AllowRefuse": false,
+                    "RefuseType": 0,
+                    "Roles": [2],
+                    "Actions": [{
+                            "ID": 1,
+                            "WorkflowID": null,
+                            "VersionID": 0,
+                            "ActivityID": 0,
+                            "Name": "Phê duyệt",
+                            "Description": null,
+                            "FinishTask": true,
+                            "TransactionID": 2,
+                            "CollectInfos": null,
+                            "Roles": [2],
+                            "Steps": []
+                        }, {
+                            "ID": 2,
+                            "WorkflowID": null,
+                            "VersionID": 0,
+                            "ActivityID": 0,
+                            "Name": "Từ chối",
+                            "Description": null,
+                            "FinishTask": true,
+                            "TransactionID": 2,
+                            "CollectInfos": null,
+                            "Roles": [2],
+                            "Steps": []
+                        }
+                    ]
+                }, {
+                    "ID": 3,
+                    "WorkflowID": null,
+                    "VersionID": 0,
+                    "Name": "Kết thúc",
+                    "Type": 2,
+                    "Description": null,
+                    "IsChild": false,
+                    "ChildWorkflowID": null,
+                    "AllowRefuse": false,
+                    "RefuseType": 0,
+                    "Roles": [],
+                    "Actions": []
+                }
+            ],
+            "Transactions": [{
+                    "ID": 1,
+                    "WorkflowID": null,
+                    "VersionID": 0,
+                    "Name": null,
+                    "Description": null,
+                    "FromActivityID": 1,
+                    "ToActivityID": 2,
+                    "AllowRecall": false
+                }, {
+                    "ID": 2,
+                    "WorkflowID": null,
+                    "VersionID": 0,
+                    "Name": null,
+                    "Description": null,
+                    "FromActivityID": 2,
+                    "ToActivityID": 3,
+                    "AllowRecall": false
+                }
+            ]
+        }
+    ]
+}

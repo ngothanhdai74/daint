@@ -1,0 +1,2335 @@
+{
+	"ID": "VBDenDV",
+	"Name": "VBDenDV",
+	"Title": "Quy trình Văn bản đến - Đơn vị",
+	"Description": "Quy trình xử lý Văn bản đến tại Đơn vị",
+	"Version": 1,
+	"MaxVersion": 2,
+	"Status": 1,
+	"OrgCode": "",
+	"OrgPath": "\\",
+	"Versions": [
+		{
+			"ID": 1,
+			"WorkflowID": "VBDenDV",
+			"Version": 1,
+			"IsActive": true,
+			"Description": "Phiên bản 1",
+			"Duration": 7,
+			"DurationUnit": 0,
+			"Variables": [],
+			"Formulas": [],
+			"States": [
+				{
+					"ID": 1,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Bắt đầu",
+					"Description": "Khởi tạo Quy trình",
+					"Percent": 0
+				},
+				{
+					"ID": 2,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Trình Lãnh đạo",
+					"Description": "Trình Lãnh đạo",
+					"Percent": 0
+				},
+				{
+					"ID": 3,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Bộ phận xử lý",
+					"Description": "Bộ phận xử lý",
+					"Percent": 0
+				},
+				{
+					"ID": 4,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Kết thúc",
+					"Description": "Kết thúc",
+					"Percent": 0
+				},
+				{
+					"ID": 5,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Lãnh đạo Hành chính xử lý",
+					"Description": "Lãnh đạo Hành chính xử lý",
+					"Percent": 0
+				}
+			],
+			"Roles": [
+				{
+					"ID": 1,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Văn thư Đơn vị",
+					"Description": "Văn thư Đơn vị",
+					"SeqNo": 1
+				},
+				{
+					"ID": 2,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Lãnh đạo Hành chính",
+					"Description": "Lãnh đạo Hành chính",
+					"SeqNo": 1
+				},
+				{
+					"ID": 3,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Lãnh đạo Đơn vị",
+					"Description": "Lãnh đạo Đơn vị",
+					"SeqNo": 1
+				},
+				{
+					"ID": 4,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Lãnh đạo Bộ phận",
+					"Description": "Lãnh đạo Bộ phận",
+					"SeqNo": 1
+				},
+				{
+					"ID": 5,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Chuyên viên",
+					"Description": "Chuyên viên",
+					"SeqNo": 1
+				}
+			],
+			"Activities": [
+				{
+					"ID": 1,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Bắt đầu",
+					"Type": 0,
+					"Description": "Khởi tạo Quy trình",
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"IsWorkQueue": true,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [
+						1
+					],
+					"Actions": [
+						{
+							"ID": 1,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 1,
+							"Name": "Chuyển Lãnh đạo Đơn vị",
+							"Description": "Chuyển Lãnh đạo Đơn vị",
+							"FinishTask": true,
+							"TransactionID": 1,
+							"CollectInfos": [
+								{
+									"PropName": "ForwardInfos",
+									"PropTitle": "",
+									"DataType": 1,
+									"Value": null,
+									"Values": "",
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null,
+									"CollectType": 1
+								},
+								{
+									"PropName": "SolveInfo",
+									"PropTitle": "Thong tin xu ly",
+									"DataType": 1,
+									"Value": "",
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null,
+									"CollectType": 0
+								}
+							],
+							"Roles": [
+								1
+							],
+							"Steps": [								
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "12"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:1004"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Phân công"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:1"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "const:1"
+											},
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.FORWARDDOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 2,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 1,
+							"Name": "Chuyển LĐ Bộ phận",
+							"Description": "Chuyển LĐ Bộ phận",
+							"FinishTask": true,
+							"TransactionID": 2,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "LĐ Bộ phận xử lý"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "LĐ Bộ phận xử lý"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:1004"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Phân công"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:1"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "const:2"
+											},
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.FORWARDDOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 3,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 1,
+							"Name": "Chuyển LĐVP",
+							"Description": "Chuyển LĐVP",
+							"FinishTask": true,
+							"AutoFoward": true,
+							"TransactionID": 3,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:17"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Phân công"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:1"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "const:1"
+											},
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.FORWARDDOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 4,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 1,
+							"Name": "Chuyển Chuyên viên",
+							"Description": "Chuyển Chuyên viên",
+							"FinishTask": true,
+							"TransactionID": 8,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "Chuyên viên xử lý"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "Chuyên viên xử lý"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:1004"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Phân công"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:1"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 998,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 1,
+							"Name": "Kết thúc",
+							"Description": "Kết thúc",
+							"FinishTask": true,
+							"TransactionID": 13,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											},
+											{
+												"Code": "Status",
+												"Value": "2"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:2"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 999,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Vào sổ",
+							"Description": "Vào sổ văn bản đến",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": null,
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 1,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:4"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Đã nhận"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 888,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Khởi tạo văn bản đến",
+							"Description": "Khởi tạo văn bản đến",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": null,
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:0"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 995,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Thu hồi văn bản",
+							"Description": "Thu hồi văn bản",
+							"FinishTask": false,
+							"TransactionID": null,
+							"CollectInfos": null,
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "8"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:8"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 993,
+							"WorkflowID": null,
+							"VersionID": 0,
+							"ActivityID": 0,
+							"Name": "Không vào sổ",
+							"Description": "Không vào sổ",
+							"FinishTask": true,
+							"TransactionID": 13,
+							"CollectInfos": null,
+							"Roles": [
+								1
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											},
+											{
+												"Code": "Status",
+												"Value": "2"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:2"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": 2,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Lãnh đạo Đơn vị",
+					"Type": 1,
+					"Description": "Lãnh đạo Đơn vị",
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [
+						3
+					],
+					"Actions": [
+						{
+							"ID": 2,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 2,
+							"Name": "Chuyển xử lý",
+							"Description": "Chuyển xử lý",
+							"FinishTask": true,
+							"TransactionID": 14,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								3
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "Bộ phận xử lý"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "Bộ phận xử lý"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:18"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Đang xử lý"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "const:3"
+											},
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.FORWARDDOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 3,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 2,
+							"Name": "Chuyển Chuyên viên xử lý",
+							"Description": "Chuyển Chuyên viên xử lý",
+							"FinishTask": true,
+							"TransactionID": 15,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								3
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "Bộ phận xử lý"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "Bộ phận xử lý"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:18"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Đang xử lý"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "const:3"
+											},
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.FORWARDDOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 998,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 2,
+							"Name": "Kết thúc",
+							"Description": "Kết thúc",
+							"FinishTask": true,
+							"TransactionID": 5,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								3
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:1006"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Hoàn thành"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:2"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "11"
+											},
+											{
+												"Code": "Status",
+												"Value": "2"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 1,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 2,
+							"Name": "Chuyển LĐ khác xử lý",
+							"Description": "Chuyển LĐ khác xử lý",
+							"FinishTask": true,
+							"TransactionID": 4,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								3
+							],
+							"Steps": []
+						}
+					]
+				},
+				{
+					"ID": 3,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Lãnh đạo Bộ phận",
+					"Type": 1,
+					"Description": "Lãnh đạo Bộ phận",
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [
+						4
+					],
+					"Actions": [
+						{
+							"ID": 1,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 3,
+							"Name": "Chuyển xử lý",
+							"Description": "Chuyển xử lý",
+							"FinishTask": true,
+							"TransactionID": 6,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "ChuTri",
+									"PropTitle": "Chủ trì",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "PhoiHop",
+									"PropTitle": "Phối hợp",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": true,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "ThongBao",
+									"PropTitle": "Thông báo",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": true,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								4
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "LĐ phòng xử lý"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "LĐ phòng xử lý"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 2,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 3,
+							"Name": "Chuyển chuyên viên xử lý",
+							"Description": "Chuyển xử lý",
+							"FinishTask": true,
+							"TransactionID": 16,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "ChuTri",
+									"PropTitle": "Chủ trì",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "PhoiHop",
+									"PropTitle": "Phối hợp",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": true,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "ThongBao",
+									"PropTitle": "Thông báo",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": true,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								4
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "Chuyên viên xử lý"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "Chuyên viên xử lý"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 998,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 3,
+							"Name": "Kết thúc",
+							"Description": "Kết thúc",
+							"FinishTask": true,
+							"TransactionID": 7,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								4
+							],
+							"Steps": [
+								{
+									"ID": 1,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "6"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "2"
+											},
+											{
+												"Code": "Status",
+												"Value": "2"
+											}
+										]
+									}
+								},
+								{
+									"ID": 3,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:19"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Hoàn thành"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:2"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": 6,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Chuyên viên",
+					"Type": 1,
+					"Description": "Chuyên viên",
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [
+						5
+					],
+					"Actions": [
+						{
+							"ID": 998,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 3,
+							"Name": "Kết thúc",
+							"Description": "Kết thúc",
+							"FinishTask": true,
+							"TransactionID": 11,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								5
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 6,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.DOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "1"
+											},
+											{
+												"Code": "StatusCode",
+												"Value": "const:1006"
+											},
+											{
+												"Code": "StatusValue",
+												"Value": "const:Hoàn thành"
+											},
+											{
+												"Code": "DocType",
+												"Value": "const:101"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:2"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "6"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "2"
+											},
+											{
+												"Code": "Status",
+												"Value": "2"
+											}
+										]
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": 4,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Kết thúc",
+					"Type": 2,
+					"Description": "Kết thúc xử lý",
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [],
+					"Actions": []
+				},
+				{
+					"ID": 5,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Lãnh đạo Hành chính",
+					"Type": 1,
+					"Description": "Lãnh đạo Hành chính",
+					"IsChild": false,
+					"ChildWorkflowID": null,
+					"AllowRefuse": false,
+					"RefuseType": 0,
+					"Roles": [
+						2
+					],
+					"Actions": [
+						{
+							"ID": 1,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 5,
+							"Name": "Trình Lãnh đạo",
+							"Description": "Trình Lãnh đạo",
+							"FinishTask": true,
+							"TransactionID": 9,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								},
+								{
+									"PropName": "TrinhLD",
+									"PropTitle": "Trình Lãnh đạo",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": true,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								2
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "Lãnh đạo đơn vị xử lý"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "Lãnh đạo đơn vị xử lý"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 2,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 5,
+							"Name": "Chuyển xử lý",
+							"Description": "Chuyển xử lý",
+							"FinishTask": true,
+							"TransactionID": 10,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								2
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 9,
+									"Action": {
+										"IsCurrent": true,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "Bộ phận xử lý"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 13,
+									"Action": {
+										"Mode": 0,
+										"Props": [
+											{
+												"Code": "State",
+												"Value": "Bộ phận xử lý"
+											}
+										]
+									}
+								},
+								{
+									"ID": 0,
+									"SeqNo": 0,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "CollectType",
+												"Value": "const:3"
+											},
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.FORWARDDOC"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						},
+						{
+							"ID": 998,
+							"WorkflowID": "VBDenDV",
+							"VersionID": 1,
+							"ActivityID": 2,
+							"Name": "Kết thúc",
+							"Description": "Kết thúc",
+							"FinishTask": true,
+							"TransactionID": 11,
+							"CollectInfos": [
+								{
+									"PropName": "Comment",
+									"PropTitle": "Ý kiến xử lý",
+									"DataType": 0,
+									"Value": null,
+									"SeqNo": 0,
+									"Required": false,
+									"Multiple": false,
+									"CollectInAction": false,
+									"Group": null
+								}
+							],
+							"Roles": [
+								3
+							],
+							"Steps": [
+								{
+									"ID": 0,
+									"SeqNo": 99,
+									"Type": 8,
+									"Action": {
+										"ItemType": 5,
+										"Props": [
+											{
+												"Code": "QueueName",
+												"Value": "const:CMC.TS.EDOC.MSG.OUTBOX.TASK"
+											},
+											{
+												"Code": "State",
+												"Value": "const:2"
+											},
+											{
+												"Code": "Organ",
+												"Value": "var:Org"
+											},
+											{
+												"Code": "Staff",
+												"Value": "var:Roles"
+											},
+											{
+												"Code": "MsgType",
+												"Value": "const:0"
+											}
+										]
+									}
+								}
+							]
+						}
+					]
+				}
+			],
+			"Transactions": [
+				{
+					"ID": 1,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Trình Lãnh đạo",
+					"Description": "Trình Lãnh đạo",
+					"FromActivityID": 1,
+					"ToActivityID": 2,
+					"AllowRecall": false
+				},
+				{
+					"ID": 2,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Chuyển xử lý",
+					"Description": "Chuyển xử lý",
+					"FromActivityID": 1,
+					"ToActivityID": 3,
+					"AllowRecall": true
+				},
+				{
+					"ID": 3,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Chuyển LĐ Văn phòng",
+					"Description": "Chuyển LĐ Văn phòng",
+					"FromActivityID": 1,
+					"ToActivityID": 5,
+					"AllowRecall": false
+				},
+				{
+					"ID": 4,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Chuyển xử lý",
+					"Description": "Chuyển xử lý",
+					"FromActivityID": 2,
+					"ToActivityID": 2,
+					"AllowRecall": false
+				},
+				{
+					"ID": 5,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Kết thúc",
+					"Description": "Kết thúc",
+					"FromActivityID": 2,
+					"ToActivityID": 4,
+					"AllowRecall": false
+				},
+				{
+					"ID": 6,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Chuyển xử lý",
+					"Description": "Chuyển xử lý",
+					"FromActivityID": 3,
+					"ToActivityID": 3,
+					"AllowRecall": false
+				},
+				{
+					"ID": 7,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Kết thúc",
+					"Description": "Kết thúc",
+					"FromActivityID": 3,
+					"ToActivityID": 4,
+					"AllowRecall": false
+				},
+				{
+					"ID": 8,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Chuyển xử lý",
+					"Description": "Chuyển xử lý",
+					"FromActivityID": 1,
+					"ToActivityID": 6,
+					"AllowRecall": false
+				},
+				{
+					"ID": 9,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Trình Lãnh đạo",
+					"Description": "Trình Lãnh đạo",
+					"FromActivityID": 5,
+					"ToActivityID": 2,
+					"AllowRecall": false
+				},
+				{
+					"ID": 10,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Chuyển xử lý",
+					"Description": "Chuyển xử lý",
+					"FromActivityID": 5,
+					"ToActivityID": 3,
+					"AllowRecall": false
+				},
+				{
+					"ID": 11,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Kết thúc",
+					"Description": "Kết thúc",
+					"FromActivityID": 6,
+					"ToActivityID": 4,
+					"AllowRecall": false
+				},
+				{
+					"ID": 12,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Kết thúc",
+					"Description": "Kết thúc",
+					"FromActivityID": 5,
+					"ToActivityID": 4,
+					"AllowRecall": false
+				},
+				{
+					"ID": 13,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Kết thúc",
+					"Description": "Kết thúc",
+					"FromActivityID": 1,
+					"ToActivityID": 4,
+					"AllowRecall": false
+				},
+				{
+					"ID": 14,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Chuyển xử lý",
+					"Description": "Chuyển xử lý",
+					"FromActivityID": 2,
+					"ToActivityID": 3,
+					"AllowRecall": false
+				},
+				{
+					"ID": 15,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Chuyển xử lý",
+					"Description": "Chuyển xử lý",
+					"FromActivityID": 2,
+					"ToActivityID": 6,
+					"AllowRecall": false
+				},
+				{
+					"ID": 16,
+					"WorkflowID": "VBDenDV",
+					"VersionID": 1,
+					"Name": "Chuyển chuyên viên",
+					"Description": "Chuyển chuyên viên",
+					"FromActivityID": 3,
+					"ToActivityID": 6,
+					"AllowRecall": false
+				}
+			]
+		}
+	]
+}
